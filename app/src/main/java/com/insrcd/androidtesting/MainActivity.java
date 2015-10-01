@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+/*
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString(CALC_TEXT_KEY, mCalcText.getText().toString());
@@ -107,5 +107,5 @@ public class MainActivity extends AppCompatActivity {
         mCalcText.setText(savedInstanceState.getString(CALC_TEXT_KEY));
 
         super.onRestoreInstanceState(savedInstanceState);
-    }
+    }*/
 }

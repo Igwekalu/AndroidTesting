@@ -3,6 +3,7 @@ package com.insrcd.androidtesting;
 import android.os.Bundle;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by ashaw on 10/1/15.
@@ -18,15 +19,17 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2 {
 
     }
 
-
-
     public void testPlusButton(){
-        mActivity.onCreate(Bundle.EMPTY, null);
+        TextView txtView = (TextView) mActivity.findViewById(R.id.txt_calc);
 
-        Button plusButton = (Button) mActivity.findViewById(R.id.btn_plus); // grab the + button
+        Button btn = (Button) mActivity.findViewById(R.id.btn_plus);
 
-        assertTrue(plusButton.hasOnClickListeners());
+        assertTrue(btn.hasOnClickListeners());
 
-        plusButton.callOnClick();
+        btn.callOnClick();
+
+        assertEquals(txtView.getText().toString(), "+");
+
+
     }
 }
